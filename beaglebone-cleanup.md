@@ -39,6 +39,6 @@ debian@beaglebone:~$ lsmod
 Module                  Size  Used by
 nfsd                  261377  2
 
-debian@beaglebone:~$ sudo depmod -ae 			/* Ignore wanring */
+debian@beaglebone:~$ sudo depmod -ae 			/* Ignore warning */
 debian@beaglebone:~$ sudo update-initramfs -u 	/* Changes will take effect next boot */
 ```
