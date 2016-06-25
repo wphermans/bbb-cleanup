@@ -1,8 +1,9 @@
-This gets rid of g_ether and related driver modules
+######This gets rid of g_ether and related driver modules
 ```
 debian@beaglebone:~$ cd /opt/scripts/boot/
 debian@beaglebone:/opt/scripts/boot$ mv am335x_evm.sh am335x_evm.sh.bak
 ```
+######This script, and a little additional work will clean out all the uneeded module cruft.
 ```
 debian@beaglebone:~$ nano remove-modules.sh
 
