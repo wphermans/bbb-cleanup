@@ -31,7 +31,7 @@ evdev.conf            pru_rproc.conf        snd.conf                snd_soc_omap
 fbdev-blacklist.conf  pruss.conf            snd_pcm.conf            snd_timer.conf              uio_pdrv_genirq.conf
 g_ether.conf          pruss_intc.conf       snd_pcm_dmaengine.conf  soundcore.conf
 ```
-Remove the conf file(s) that represent the modules you need loaded.
+**Remove the conf file(s) that represent the modules you need loaded.**
 ```
 debian@beaglebone:/etc/modprobe.d$ sudo reboot
 ```
