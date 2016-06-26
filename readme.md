@@ -7,7 +7,11 @@
 >`debian@beaglebone:/opt/scripts/boot$ mv am335x_evm.sh am335x_evm.sh.bak`
 
 ---
-#####This script, and a little additional work will clean out all the uneeded module cruft.
+
+<dl>
+	<dt><h4>Unwanted kernel modules</h4></dt>
+	<dd>The following script, and additional commands illustrates how to remove unwanted kernel modules. Take care to remove 'blacklist' files for modules you wish to run. After this script has finished.</dd>
+</dl>
 
 >`debian@beaglebone:~$ nano remove-modules.sh`
 
@@ -27,27 +31,24 @@ done
 ```
 ---
 
-```
+```sh
 debian@beaglebone:~$ chmod +x ./remove-modules.sh
 debian@beaglebone:~$ sudo ./remove-modules.sh
 debian@beaglebone:~$ cd /etc/modprobe.d/
-debian@beaglebone:/etc/modprobe.d$ ls
+debian@beaglebone:/etc/modprobe.d$ ls 				/* Remove the conf file(s) that represent the modules you need loaded. */
 c_can.conf            omap_aes_driver.conf  pwm_tiecap.conf         snd_soc_core.conf           spi_omap2_mcspi.conf
 c_can_platform.conf   omap_rng.conf         pwm_tiehrpwm.conf       snd_soc_davinci_mcasp.conf  spidev.conf.bak
 can_dev.conf          omap_sham.conf        rng_core.conf           snd_soc_edma.conf           tieqep.conf
 evdev.conf            pru_rproc.conf        snd.conf                snd_soc_omap.conf           uio.conf
 fbdev-blacklist.conf  pruss.conf            snd_pcm.conf            snd_timer.conf              uio_pdrv_genirq.conf
 g_ether.conf          pruss_intc.conf       snd_pcm_dmaengine.conf  soundcore.conf
-```
-**Remove the conf file(s) that represent the modules you need loaded.**
-```
 debian@beaglebone:/etc/modprobe.d$ sudo reboot
 ```
-```
-debian@beaglebone:~$ lsmod
+
+```sh
+debian@beaglebone:~$ lsmod  
 Module                  Size  Used by
 nfsd                  261377  2
-
-debian@beaglebone:~$ sudo depmod -ae 			/* Ignore warning */
-debian@beaglebone:~$ sudo update-initramfs -u 	/* Changes will take effect next boot */
+debian@beaglebone:~$ sudo depmod -ae 			/* Ignore warning */  
+debian@beaglebone:~$ sudo update-initramfs -u 	/* Changes will take effect next boot */  
 ```
