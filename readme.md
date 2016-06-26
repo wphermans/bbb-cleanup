@@ -5,18 +5,20 @@
 
 ######This script, and a little additional work will clean out all the uneeded module cruft.
 >`debian@beaglebone:~$ nano remove-modules.sh`
+ 	
+```sh
+#!/bin/sh
 
->`#!/bin/sh`
->`modules=$(lsmod|cut -d ' ' -f 1)`
->`modpath="/etc/modprobe.d"`
->`for module in  $modules`
->`do`
->`        if [ $module != 'Module' ] ; then`
->`               touch $modpath/$module.conf`
->`               echo 'install ' $module ' /bin/true' > $modpath/$module.conf`
->`        fi`
->`done`
-
+modules=$(lsmod|cut -d ' ' -f 1)
+modpath="/etc/modprobe.d"
+for module in  $modules
+do
+        if [ $module != 'Module' ] ; then
+                touch $modpath/$module.conf
+                echo 'install ' $module ' /bin/true' > $modpath/$module.conf
+        fi
+done
+```
 ```
 debian@beaglebone:~$ chmod +x ./remove-modules.sh
 debian@beaglebone:~$ sudo ./remove-modules.sh
