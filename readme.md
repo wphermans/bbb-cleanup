@@ -3,8 +3,8 @@
 	<dd>Renaming the file <em>am335x_evm.sh</em> will stop g_multi and related files from loading at boot.</dd>
 </dl>
 
->`debian@beaglebone:~$ cd /opt/scripts/boot/`
->`debian@beaglebone:/opt/scripts/boot$ mv am335x_evm.sh am335x_evm.sh.bak`
+>`debian@beaglebone:~$ cd /opt/scripts/boot/`  
+>`debian@beaglebone:/opt/scripts/boot$ mv am335x_evm.sh am335x_evm.sh.bak`  
 
 ---
 
