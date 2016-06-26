@@ -4,7 +4,7 @@
 </dl>
 
 ---
-```sh
+```
 debian@beaglebone:~$ cd /opt/scripts/boot/ 
 debian@beaglebone:/opt/scripts/boot$ mv am335x_evm.sh am335x_evm.sh.bak  
 ```
@@ -16,7 +16,7 @@ debian@beaglebone:/opt/scripts/boot$ mv am335x_evm.sh am335x_evm.sh.bak
 </dl>
 
 ---
-```sh
+```
 debian@beaglebone:~$ nano remove-modules.sh`
 ```
 ---
@@ -35,7 +35,7 @@ done
 ```
 ---
 
-```sh
+```
 debian@beaglebone:~$ chmod +x ./remove-modules.sh
 debian@beaglebone:~$ sudo ./remove-modules.sh
 debian@beaglebone:~$ cd /etc/modprobe.d/
@@ -47,11 +47,13 @@ evdev.conf            pru_rproc.conf        snd.conf                snd_soc_omap
 fbdev-blacklist.conf  pruss.conf            snd_pcm.conf            snd_timer.conf              uio_pdrv_genirq.conf
 g_ether.conf          pruss_intc.conf       snd_pcm_dmaengine.conf  soundcore.conf
 ```
-`/* Remove the conf file(s) that represent the modules you need loaded. Then reboot.*/`  
-`debian@beaglebone:/etc/modprobe.d$ sudo reboot`  
+```
+/* Remove the conf file(s) that represent the modules you need loaded. Then reboot.*/  
+debian@beaglebone:/etc/modprobe.d$ sudo reboot  
 ```
 ---
-```sh
+
+```
 debian@beaglebone:~$ lsmod  
 Module                  Size  Used by
 nfsd                  261377  2
