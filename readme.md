@@ -3,9 +3,11 @@
 	<dd>Renaming the file <em>am335x_evm.sh</em> will stop g_multi and related files from loading at boot.</dd>
 </dl>
 
->`debian@beaglebone:~$ cd /opt/scripts/boot/`  
->`debian@beaglebone:/opt/scripts/boot$ mv am335x_evm.sh am335x_evm.sh.bak`  
-
+---
+```sh
+debian@beaglebone:~$ cd /opt/scripts/boot/ 
+debian@beaglebone:/opt/scripts/boot$ mv am335x_evm.sh am335x_evm.sh.bak  
+```
 ---
 
 <dl>
@@ -13,8 +15,10 @@
 	<dd>The following script, and additional commands illustrates how to remove unwanted kernel modules. Take care to remove 'blacklist' files for modules you wish to run. After this script has finished.</dd>
 </dl>
 
->`debian@beaglebone:~$ nano remove-modules.sh`
-
+---
+```sh
+debian@beaglebone:~$ nano remove-modules.sh`
+```
 ---
 ```sh
 #!/bin/sh
@@ -44,7 +48,7 @@ fbdev-blacklist.conf  pruss.conf            snd_pcm.conf            snd_timer.co
 g_ether.conf          pruss_intc.conf       snd_pcm_dmaengine.conf  soundcore.conf
 debian@beaglebone:/etc/modprobe.d$ sudo reboot
 ```
-
+---
 ```sh
 debian@beaglebone:~$ lsmod  
 Module                  Size  Used by
@@ -52,3 +56,4 @@ nfsd                  261377  2
 debian@beaglebone:~$ sudo depmod -ae 			/* Ignore warning */  
 debian@beaglebone:~$ sudo update-initramfs -u 	/* Changes will take effect next boot */  
 ```
+---
