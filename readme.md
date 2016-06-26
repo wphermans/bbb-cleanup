@@ -4,8 +4,10 @@
 >`debian@beaglebone:/opt/scripts/boot$ mv am335x_evm.sh am335x_evm.sh.bak`
 
 ######This script, and a little additional work will clean out all the uneeded module cruft.
->`debian@beaglebone:~$ nano remove-modules.sh`
- 	
+```bash
+debian@beaglebone:~$ nano remove-modules.sh
+```
+___
 ```sh
 #!/bin/sh
 
@@ -19,6 +21,7 @@ do
         fi
 done
 ```
+***
 ```
 debian@beaglebone:~$ chmod +x ./remove-modules.sh
 debian@beaglebone:~$ sudo ./remove-modules.sh
