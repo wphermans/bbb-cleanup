@@ -39,7 +39,7 @@ done
 debian@beaglebone:~$ chmod +x ./remove-modules.sh
 debian@beaglebone:~$ sudo ./remove-modules.sh
 debian@beaglebone:~$ cd /etc/modprobe.d/
-debian@beaglebone:/etc/modprobe.d$ ls 				/* Remove the conf file(s) that represent the modules you need loaded. */
+debian@beaglebone:/etc/modprobe.d$ ls 		/* Remove the conf file(s) that represent the modules you need loaded. */
 c_can.conf            omap_aes_driver.conf  pwm_tiecap.conf         snd_soc_core.conf           spi_omap2_mcspi.conf
 c_can_platform.conf   omap_rng.conf         pwm_tiehrpwm.conf       snd_soc_davinci_mcasp.conf  spidev.conf.bak
 can_dev.conf          omap_sham.conf        rng_core.conf           snd_soc_edma.conf           tieqep.conf
