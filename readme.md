@@ -1,10 +1,13 @@
-###This gets rid of g_ether and related driver modules
+<dl>
+	<dt>g_multi</dt>
+	<dd>Renaming the file <em>am335x_evm.sh</em> will stop g_multi and related files from loading at boot.</dd>
+</dl>
 
 >`debian@beaglebone:~$ cd /opt/scripts/boot/`
 >`debian@beaglebone:/opt/scripts/boot$ mv am335x_evm.sh am335x_evm.sh.bak`
 
 ---
-###This script, and a little additional work will clean out all the uneeded module cruft.
+#####This script, and a little additional work will clean out all the uneeded module cruft.
 
 >`debian@beaglebone:~$ nano remove-modules.sh`
 
