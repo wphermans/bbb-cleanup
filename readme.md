@@ -1,5 +1,5 @@
 <dl>
-	<dt>g_multi</dt>
+	<dt><h2>g_multi</h2></dt>
 	<dd>Renaming the file <em>am335x_evm.sh</em> will stop g_multi and related files from loading at boot.</dd>
 </dl>
 
